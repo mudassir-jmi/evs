@@ -12,8 +12,9 @@ const error404 = require('./controllers/error');
 //model requires
 const Admin = require('./models/admin');
 const Voter = require('./models/voter');
+const cool = require('cool-ascii-faces');
 //mongodb url
-const MONGODB_URI = "mongodb://localhost:27017/mvs";
+const MONGODB_URI = "mongodb+srv://mahibvs:jamiabvs@cluster0.u9lyf.mongodb.net/mvs";
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -69,7 +70,7 @@ app.use((req, res,next)=>{
 });
 
 //voter 
-
+app.get('/cool', (req, res) => res.send(cool()));
 
 // //flash and csrf
 
@@ -100,6 +101,8 @@ app.use(authoRoutes);
 app.use(authvRoutes);
 app.use('/p/',electRoutes.routes);
 app.use(error404.get404);
+
+
 
 mongoose
   .connect(
