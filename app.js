@@ -14,6 +14,7 @@ const Admin = require('./models/admin');
 const Voter = require('./models/voter');
 //mongodb url
 const MONGODB_URI = "mongodb://localhost:27017/mvs";
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -106,7 +107,7 @@ mongoose
   )
   .then(result => {
   
-    app.listen(3000, console.log("at 3000"));
+    app.listen(PORT, console.log("at 5000"));
   })
   .catch(err => {
     console.log(err);

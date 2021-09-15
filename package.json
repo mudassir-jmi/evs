@@ -5,11 +5,14 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "start-server": "node app.js"
   },
   "author": "미히team",
   "license": "ISC",
+  "engines":{
+    "node": "v14.17.5"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
