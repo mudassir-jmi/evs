@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/form.css">
+
+        <title>Email</title>
+    </head>
+    <body>
+         <div class="M-form">
+             <form action="" class="form">
+                 <h2 class="form__title">Enter Your Email</h2>
+                 <div class="form_div">
+                     <input type="text" class="form__input" placeholder=" ">
+                     <label for="" class="form__label">Email</label>
+                 </div>
+                 <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                <input type="submit" class="form__button" value="Next">
+             </form>
+         </div>
+    </body>
+</html>
+

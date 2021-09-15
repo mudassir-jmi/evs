@@ -1,0 +1,51 @@
+<%- include('../../partials/header') %> 
+<link rel="stylesheet" href="/css/hashadrs.css">
+<link rel="stylesheet" href="/css/electnav.css">
+<%- include('../../partials/title') %> 
+<link href="https://fonts.googleapis.com/css?family=Poppins|Work+Sans&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<%- include('../../partials/navigation') %> 
+<%- include('../../partials/electnav') %> 
+
+
+
+
+<div class="wrapper2">
+    <h1>Candidate Details</h1>
+    <div class="table-container">
+   
+
+
+       
+        <table>
+          <thead>
+            <tr>
+                <th>Name</th>
+             <th>Age</th>
+              <th>Public Address</th>
+           
+              
+            </tr>
+          </thead>
+    
+          <tbody>
+           
+            <tr>
+                <% election.candidatesDetails.forEach(c=>{%> 
+                    
+                    <td data-heading="Name" class="ellips"><%=c.candName %></td>
+              <td data-heading="Age"><%=c.candAge %></td>
+              <td data-heading="Total Received"><%= (!c.candidateWallet.pub)? 'Not created yet' : c.candidateWallet.pub %></td>
+     
+                <!-- </div> -->
+            </tr>
+               <%   }) %> 
+              
+            </tr>
+       
+          </tbody>
+        </table>
+      </div>
+</div>
+
+<%- include('../../partials/footer') %> 

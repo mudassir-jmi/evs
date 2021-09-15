@@ -1,0 +1,176 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family:"Arial", Serif;
+    background-color:#f4f4f4;
+    overflow-x:hidden;
+    background-color: white;
+  }
+  @import "http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css";
+  .navbar{
+    /* background-color:#3b5998; */
+    background-color: lightblue;
+    overflow:hidden;
+    height:63px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    position: sticky;
+  }
+  .navbar a{
+    float:left;
+    display:block;
+    color:#f2f2f2;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+    font-size:17px;
+  }
+  
+  .navbar ul{
+    margin:8px 0 0 0;
+    list-style:none;
+    float: right;
+  }
+  
+  .navbar a:hover{
+    background-color:#ddd;
+    color:#000;
+  }
+  
+  .side-nav{
+    height:100%;
+    width:0;
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:0;
+    /* background-color:#111; */
+    background-color:lightblue;
+    opacity:0.9;
+    overflow-x:hidden;
+    padding-top:60px;
+    transition:0.5s;
+  }
+  
+  .side-nav a{
+    padding:10px 10px 10px 30px;
+    text-decoration:none;
+    font-size:22px;
+    /* color:#ccc; */
+    color: black;
+    display:block;
+    transition:0.3s;
+  }
+  
+  .side-nav a:hover{
+    color:#fff;
+  }
+  
+  .side-nav .btn-close{
+    position:absolute;
+    top:0;
+    right:22px;
+    font-size:36px;
+    margin-left:50px;
+  }
+  
+  #main{
+    transition:margin-left 0.5s;
+    padding:20px;
+    overflow:hidden;
+    width:100%;
+  }
+  
+  
+  @media(max-width:568px){
+    .navbar-nav{display:none}
+  }
+  
+  @media(min-width:568px){
+    /*.open-slide{display:none}*/
+  }
+  
+
+
+/* button */
+h1{
+    text-align: center;
+ }
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 4px;
+    /* background-color: #25252A; */
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh; 
+}
+.container,logout{
+    text-decoration: none;
+}
+.btn{
+    width: 200px;
+    height: 50px;
+    border: none;
+    color: white;
+    background-color: rgb(255, 0, 68);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 #f9e506;
+    transition: ease-out 0.3s;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 90px;
+}
+.btn:hover{
+    box-shadow: inset 300px 0 0 0 #f9e506; 
+    cursor: pointer;
+    color: #000;
+}
+#log{
+    display: flex;
+    margin: auto;
+}
+
+/* dashboard card */
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: lightgreen;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background:lightblue;
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+.card,h3{
+  text-align: center;
+  color: red;
+}
+.container,input{
+  margin-bottom: 80px;
+  border-radius: 5px solid black;
+}
+

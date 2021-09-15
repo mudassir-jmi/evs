@@ -1,0 +1,75 @@
+<%- include('../../partials/header') %> 
+
+<link rel="stylesheet" href="/css/electnav.css">
+<%- include('../../partials/title') %> 
+<%- include('../../partials/navigation') %> 
+<%- include('../../partials/electnav') %> 
+
+   <!-- // <div > -->
+       <div class="wrapper1">
+        <!-- <div class="logo">
+            <img src="https://image.shutterstock.com/shutterstock/photos/1342666157/display_1500/stock-vector-hand-voting-ballot-box-icon-election-vote-concept-simple-flat-design-for-web-site-logo-app-ui-1342666157.jpg" alt="">
+        </div> -->
+        <h2>Admin Wallet</h2>
+        <p>Keep it safe.</p>
+        <hr>
+        
+       <!-- // <div > -->
+        <% if(!wallet.isCreated) {%> 
+        <form action="/o/create-wallet" method="post" class="card">
+                <p>Please create your wallet first</p>
+                <p>And a pdf <i class="fas fa-file-pdf"></i> will be sent, please keep it safe otherwise, you won't be able to recover it and not able to make any transactions ! <i class="fas fa-money-check-alt" ></i></p >
+            <input type="hidden" name="electionId" value="<%=election._id%>">
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <div class="btn">
+                <button type="submit" class="submit_btn" id="btnCandidate">create</button>
+            </div>
+        </form>
+        <% } else if(!wallet.hasCoinbase){%>
+             <form action="/o/create-coinbase" method="post" class="card">
+                <p>You have successfully created your wallet!</p>
+                <p>Please keep safe your wallet pdf <i class="fas fa-file-pdf"></i> .</p >
+                    <br>
+                    <br>
+                <h3>Please mine your coinbase transaction here.</h3>
+                <span>bit vote will be added to your account!</span>
+            <input type="hidden" name="electionId" value="<%=election._id%>">
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <div class="btn">
+                <button type="submit" class="submit_btn" id="btnCandidate">create</button>
+            </div>
+        </form>
+         </div>  
+         <% } else { %>  
+
+            <div >
+           
+                <br>
+                <br>
+                <form action="/o/balance" method="post" class="card">
+                    <h2>Hurray!</h2>
+                    <p>Wanna Check your available balance</p>
+                    <p>Open your pdf <i class="fas fa-file-pdf"></i> and type here your public key</i></p >
+                        <div class="input_field">
+                            <label>Public Key</label>
+                            <input type="text" class="input" name ="pubkey" autocomplete="off">
+                        </div>
+               
+                <div class="btn">
+                    <input type="hidden" name="electionId" value="<%=election._id%>">
+                    <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                    <button type="submit" class="submit_btn" id="btnCandidate">create</button>
+                </div>
+            </form>
+                </div>
+                <% } %> 
+                <%  if(showBalance) {  %> 
+                    <div class="card">
+                        Your blanace is <%=balance%> 
+                    </div>
+                    <% } %> 
+           </div> 
+       
+
+<script src="/js/simple.js"></script>
+<%- include('../../partials/footer') %> 

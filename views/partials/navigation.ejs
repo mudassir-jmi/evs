@@ -1,0 +1,51 @@
+<div class="loader">
+    <img src="/img/voteloader1.gif" alt="Loading..." />
+</div>
+        <header class="header">
+            <!-- <a href="#" class="header__logo"></a> -->
+
+            <i class='fas fa-bars header__toggle' id="header-toggle" ></i>
+
+            <nav class="nav" id="nav-menu">
+                <div class="nav__content bd-grid">
+                    <a href="/o/dashboard" class="nav__perfil">
+                        <div class="nav__img">
+                            <img src="/img/symbol.png" alt="">
+                        </div>
+                        
+                        <div>
+                            <span class="nav__name">Blockchain Voting System</span>
+                        </div>
+                    </a>
+    
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <li class="nav__item"> <form class="example" action="/p/search" style="margin:auto;">
+                                <input type="text" placeholder="Search transaction,an address or block" name="b" style="height: 30px;width: 250px;">
+                                <input type="hidden" name="_csrf" value="<%=csrfToken%> ">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                              </form></li>
+                            <li class="nav__item"><a href="/o/dashboard" class="nav__link <%= path === '/o/dashboard' ? 'active' : '' %>">Home <i class="fas fa-home"></i></a></li>
+
+                            <li class="nav__item"><a href="/o/create" class="nav__link <%= path === '/o/create' ? 'active' : '' %>">Create <i class="fas fa-plus" ></i></a></li>
+                           
+                            <li class="nav__item dropdown">
+                                <a href="/o/profile" class="nav__link dropdown__link <%= path === '/o/profile' ? 'active' : '' %>"><%=admin.name%><i class="fas fa-chevron-circle-down dropdown__icon"></i></i></a>
+                                <ul class="dropdown__menu">
+                                    <li class="dropdown__item">
+                                        <a href="/about" class="nav__link <%= path === '/about' ? 'active' : '' %>">About BVS</i></a>                                    </li>
+                                    <li class="dropdown__item"><form action="/ologout" method="post"><input type="hidden" name="_csrf" value="<%=csrfToken%>"><button class="nav__link" type="submit">Logout <i class="fas fa-sign-out-alt"></i></button></form></li>
+                                </ul>
+
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+       
+
+        <!--===== MAIN JS =====-->
+      

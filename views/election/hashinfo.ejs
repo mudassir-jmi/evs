@@ -1,0 +1,62 @@
+    <%- include('../partials/header') %> 
+    <link rel="stylesheet" href="/css/hashinfo.css">
+
+    <title>Block</title>
+</head>
+<body>
+    
+    <div class="table-container up-100">
+        <h1><%= electionTitle %> </h1>
+        <h2 class="table-heading">Block</h2>
+     
+        <table>
+      
+            <tr>
+              <th>Hash</th>
+              <td data-heading="Hash"><%= block.hash %> </td>
+            </tr>
+
+            <tr>
+              <th>Confirmations</th>
+              <td data-heading="Confirmations"><%=chain.length-block.index+1%> </td>
+              </tr>
+
+              <tr>
+              <th>Timestamp</th>
+              <td data-heading="Timestamp"><% dateObj = new Date(block.timestamp);var dd_mm_yyyy = dateObj.toLocaleDateString(); %><%= dd_mm_yyyy.replace(/(\d+)\/(\d+)\/(\d+)/g, "$3-$2-$1"); %>  <%= dateObj.toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}).slice(10,22);%> </td>
+              </tr>
+
+              <tr>
+              <th>Height</th>
+              <td data-heading="Height"><%= block.index %> </td>
+              </tr>
+
+              <tr>
+              <th>Miner</th>
+              <td data-heading="Miner">Unknown</td>
+              </tr>
+
+              <tr>
+              <th>Number of Transactions</th>
+              <td data-heading="Number of Transactions"><%= block.index >1 ? block.transactions[0].output.length : 0 %> </td>
+              </tr>
+              <th>Miner</th>
+              <td data-heading="Miner">Unknown</td>
+              </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h1>Block Transactions</h1>
+
+        <% if(block.index >1 ? block.transactions[0].output.length : 0){ %> 
+            <p>input adress :- <%= block.transactions[0].inputAdrs %> </p>
+        <p>input bitvote :- <%=block.transactions[0].inputVal %> </p>
+        <% block.transactions[0].output.forEach(o=>{  %>
+            <p>receiver adress:- <%= o.receiver %> </p>
+            <p>bitvote :- <%= o.val %> </p>
+            <%  }) %> 
+            <%   }else{  %> 
+                No transaction has been made.
+                <%  } %> 
+</body>
+</html>

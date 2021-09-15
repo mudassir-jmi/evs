@@ -1,0 +1,46 @@
+<%- include('../partials/header') %> 
+
+<link rel="stylesheet" href="/css/carddash.css">
+
+<%- include('../partials/title') %> 
+<%- include('../partials/vnav') %> 
+
+<main>
+      <h1>welcome</h1>
+      <% if(election.wallet.hasAnnounced){ %> 
+      <div class="container">
+      <article class="card product-item">
+               
+            <h1 class="product__title">
+            <a class="card__header product__title para " href="/v/vote"><%=election.electionTitle%>
+              
+             </h1>
+            </a>
+     
+         <div class="card__image centered">
+         </div>
+         <div class="card__actions">  
+        <div class="wrap-del">
+           <div class="tlink"><a   href="/p/transaction/<%=election._id%>/"><i class="fas fa-project-diagram"></i></a> </div>
+           <div class="btndel">
+            <form action="/o/vote" method="get">
+               <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+               <button class="btn" name="electionId" value="<%=election.electionId%>" style="border-width: 0;"><i class="fas fa-vote-yea" ></i></button>
+                 </form>   
+           </div>      
+         
+        </div>          
+</div>
+     </article>
+</div>
+<% } else{%> 
+   <div class="container" style="margin-top:30px;">
+   <div class="card">
+      <p>Looks like oraganizer has't announced the election!</p>
+   </div>
+</div>
+   <% } %> 
+</main>
+
+
+<%- include('../partials/footer') %> 

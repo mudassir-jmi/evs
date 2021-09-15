@@ -1,0 +1,51 @@
+
+
+
+<%- include('../partials/header') %> 
+
+<link rel="stylesheet" href="/css/carddash.css">
+<link rel="stylesheet" href="/css/hashadrs.css">
+<%- include('../partials/title') %> 
+<%- include('../partials/vnav') %> 
+
+
+<div class="wrapper2" style="margin: 100px;">
+    <h1>Candidate Details</h1>
+    <h2 ><%= election.electionTitle %> </h2>
+    <div class="table-container">
+   
+
+
+       
+        <table>
+          <thead>
+            <tr>
+                <th>Name</th>
+             <th>Age</th>
+              <th>Public Address</th>
+           
+              
+            </tr>
+          </thead>
+    
+          <tbody>
+           
+            <tr>
+                <% election.candidatesDetails.forEach(c=>{%> 
+                    
+                    <td data-heading="Name" class="ellips"><%=c.candName %></td>
+              <td data-heading="Age"><%=c.candAge %></td>
+              <td data-heading="Total Received"><%= (!c.candidateWallet.pub)? 'Not created yet' : c.candidateWallet.pub %></td>
+     
+                <!-- </div> -->
+            </tr>
+               <%   }) %> 
+              
+            </tr>
+       
+          </tbody>
+        </table>
+      </div>
+</div>
+<script src="/js/simple.js"></script>
+<%- include('../partials/footer') %> 

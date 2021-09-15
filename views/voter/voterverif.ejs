@@ -1,0 +1,57 @@
+<%- include('../partials/header') %> 
+<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/cam.css">
+<%- include('../partials/title') %> 
+  
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://image.shutterstock.com/shutterstock/photos/1342666157/display_1500/stock-vector-hand-voting-ballot-box-icon-election-vote-concept-simple-flat-design-for-web-site-logo-app-ui-1342666157.jpg" alt="">
+        </div>
+        <div class="title">
+            <h2>Election Title</h2>
+        </div>
+        <div class="title">
+            <p>Plzz Fill the form to be a part of voter </p>
+        </div>
+       <!-- // <div > -->
+            <form action="/v/create-voter" method="post" class="card">
+                <div class="input_field">
+                    <label>Name</label>
+                    <input type="text" class="input" name ="vName">
+                </div>         
+                <div class="input_field">
+                    <label>Enter your number</label>
+                    <input type="text" class="input" name="numOfVid">
+                </div>
+                <div class="input_field">
+                    <label>Enter your phone number</label>
+                    <input type="text" class="input" name="numOfVphone">
+                </div>
+                <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                <div class="btn">
+                    <input type="submit" value="Submit" class="submit_btn">
+                </div>
+            </form>
+            <div class="contentarea">
+                <h1>
+                    Be still
+                </h1>
+                <p> A photo gonna save.
+                  </p>
+              <div class="camera">
+                <video id="video">Video stream not available.</video>
+                <button id="startbutton">Take photo</button> 
+              </div>
+              <canvas id="canvas">
+              </canvas>
+              <div class="output">
+                <img id="photo" alt="The screen capture will appear in this box."> 
+              </div>
+                <p>
+                    Visit our article <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos"> Taking still photos with WebRTC</a> to learn more about the technologies used here.
+                </p>
+            </div>
+        <!-- </div> -->
+    </div>	
+    <script src="/js/cam.js"></script>
+    <%- include('../partials/footer') %> 

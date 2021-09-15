@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	font-size: 14px;
+	background-color: #f9f9f9;
+}
+
+main {
+	padding: 1rem;
+	margin: auto;
+  }
+a {
+    text-decoration:none;
+}
+.centered {
+	text-align: center;
+  }
+
+  .user-message{
+	margin: auto;
+	width: 80%;
+	border: 1px solid #ffeb3b;
+	padding: 0.9rem;
+	border-radius: 2.5px;
+	background: #b9c9ff;
+	text-align: center;
+	color: #00695c;
+  }
+  .user-message-error{
+	border-color: red;
+	background: rgb(256, 176,176);
+	color: red;
+  }
+  p{
+	color: #262626;
+	font-family: 'Work sans',sans-serif;
+}
+.copyButton{
+	background-color: #48B0ED;
+	padding: 5px 15px;
+	border: none;
+	color: white;
+	font-size: 18px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.alert{
+	position: absolute;
+	margin: auto;
+	background-color: #101a2d;
+	color: white;
+	padding: 10px 0;
+	font-size: 16px;
+	font-family: 'Poppins',sans-serif;
+	text-align: center;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+.parahori {
+	overflow: scroll;
+	margin: 10px;
+	padding: 4px;
+}

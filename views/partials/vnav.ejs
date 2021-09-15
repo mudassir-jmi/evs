@@ -1,0 +1,48 @@
+<div class="loader">
+    <img src="/img/voteloader1.gif" alt="Loading..." />
+</div>
+        <header class="header">
+            <a href="#" class="header__logo"></a>
+
+            <i class='fas fa-bars header__toggle' id="header-toggle" ></i>
+
+            <nav class="nav" id="nav-menu">
+                <div class="nav__content bd-grid">
+                    <a href="/v/dashboard" class="nav__perfil">
+                        <div class="nav__img">
+                            <img src="/img/symbol.png" alt="">
+                        </div>
+                        
+                        <div>
+                            <span class="nav__name">Blockchain Voting System</span>
+                        </div>
+                    </a>
+    
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="/v/dashboard" class="nav__link <%= path === '/v/dashboard' ? 'active' : '' %>">Home <i class="fas fa-home"></i></a></li>
+    
+
+    
+                           
+                            <li class="nav__item dropdown">
+                                <a href="/v/profile" class="nav__link dropdown__link <%= path === '/v/profile' ? 'active' : '' %>"><%=voter.email%>  <i class="fas fa-chevron-circle-down dropdown__icon"></a></i>
+                                <ul class="dropdown__menu">
+                                    <li class="dropdown__item"><a href="/v/wallet" class="nav__link <%= path === '/v/wallet' ? 'active' : '' %>">Wallet <i class="fas fa-wallet"></i></a></li>
+                                    <li class="dropdown__item"><a href="/v/<%=election.electionTitle%>/<%=election._id%>/election-details" class="nav__link <%= path === '/v/election-details' ? 'active' : '' %>">Election Details <i class="fas fa-plus"></i></a></li>
+                                    <li class="dropdown__item"><a href="/v/<%=election.electionTitle%>/<%=election._id%>/result" class="nav__link <%= path === '/v/election-result' ? 'active' : '' %>">Election Result <i class="fas fa-poll"></i></a></li>
+                                    <li class="dropdown__item"><form action="/vlogout" method="post"><input type="hidden" name="_csrf" value="<%=csrfToken%>"><button class="nav__link" type="submit">Logout</button></form></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav__item dropdown">
+                                <a href="/about" class="nav__link dropdown__link <%= path === '/about' ? 'active' : '' %>">About BVS</i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!--===== MAIN JS =====-->
+      

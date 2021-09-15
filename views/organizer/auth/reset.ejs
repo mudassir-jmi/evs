@@ -1,0 +1,51 @@
+<%- include('../../partials/header') %> 
+
+
+<%- include('../../partials/title') %> 
+<style>
+    body {
+ background-image: url("/img/forgot_password.svg");
+ background-color: hsla(0, 0%, 100%, 0.973);
+ background-repeat: repeat-y;
+}
+</style>
+<% if(errorMsg) {%> 
+    <div class="user-message user-message-error"><%= errorMsg %></div>
+<% } %> 
+
+<div class="wrapper1">
+<% if(isResetmode) {%> 
+    
+<form action="/oreset" method="post" class="card">
+    <h2 class="title centered">Admin : BVS </h2>
+<h3 class=" centered">Please enter your mail!</h3>
+<br><br>
+    <div class="input_field">
+        <label>Email</label>
+        <input type="email" class="input" name ="email" value="<%=oldInput.email%> ">
+    </div>         
+    <div class="btn">
+        <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+        <input type="submit" value="Submit" class="submit_btn">
+    </div>
+</form>
+
+<% } else { %>
+    <form action="/oreset" method="post" class="card">
+        <h2 class="title centered">Admin : BVS </h2>
+    <h3 class=" centered">A lin k has been send!</h3>
+    <br><br>
+        <!-- <div class="input_field">
+            <label>Email</label>
+            <input type="email" class="input" name ="email" value="<%=oldInput.email%> ">
+        </div>         
+        <div class="btn">
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <input type="submit" value="Submit" class="submit_btn">
+        </div> -->
+    </form>
+    
+    <% } %> 
+</div>
+
+<%- include('../../partials/footer') %> 

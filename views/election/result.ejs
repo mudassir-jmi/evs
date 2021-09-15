@@ -1,0 +1,50 @@
+
+<%- include('../partials/header') %> 
+<link rel="stylesheet" href="/css/electnav.css">
+    <link rel="stylesheet" type="text/css" href="/css/resultcss.css">
+    <%- include('../partials/title') %> 
+    <%- include('../partials/navigation') %> 
+    <%- include('../partials/electnav') %> 
+
+    <center>
+
+    
+ <div class="wrapper1" style="margin: 50px;">
+    <h1><%=election.electionTitle%></h1>
+    <h2>Result</h2>
+<table class="styled-table">
+
+
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Name of Candidate</th>
+            <th>Age</th>
+             <th>Bitvote</th>
+              <th>Rank</th>
+        </tr>
+    </thead>
+  
+          
+            <% let i=1; j=0 %> 
+            <% election.candidatesDetails.forEach(c=>{%> 
+     
+                    <td><%= i ? '0'+i++ : i++ %> </td>
+            <td><%=c.candName %></td>
+            <td><%=c.candAge %></td>
+            <td ><%= canBV[j] %> </td>
+            <td>0</td>
+                <!-- </div> -->
+            </tr>
+               <% j++  }) %> 
+        
+        
+        
+    </tbody>
+
+</table>
+</div>
+</center>
+
+<script src="/js/simple.js"></script>
+<%- include('../partials/footer') %> 

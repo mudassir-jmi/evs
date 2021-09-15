@@ -1,0 +1,63 @@
+<%- include('../partials/header') %> 
+
+<%- include('../partials/title') %> 
+<%- include('../partials/navigation') %> 
+    <div class="wrapper1">
+   
+        <div class="title">
+            <p>Plzz Fill The Form</p>
+        </div>
+      
+        <% if(errorMsg) {%> 
+            <div class="user-message user-message-error"><%= errorMsg %></div>
+        <% } %> 
+            <form action="/o/create-election" method="post" class="card">
+                <div class="input_field">
+                    <label>Election Title</label>
+                    <input type="text" class="input <%= validationErrors.find(e=> e.param ==='electionTitle') ? 'invalid' : ''%> " name ="electionTitle">
+                </div>
+                <div class="input_field">
+                    <label>No.of Candidate</label>
+                    <input type="text" class="input <%= validationErrors.find(e=> e.param ==='NoOfCandidate') ? 'invalid' : ''%> " id="NoOfCandidate" name="NoOfCandidate">
+                </div>
+                
+                <div class="btn">
+                    <button type="button" class="submit_btn" id="btnCandidate">create</button>
+                </div>
+                <div id="showCandidate"></div>
+                <div class="input_field">
+                    <label>No.of voters</label>
+                    <input type="text" class="input <%= validationErrors.find(e=> e.param ==='NoOfVoters') ? 'invalid' : ''%> " id="NoOfVoters" name="NoOfVoters">
+                </div>
+                <div class="btn">
+                    <button type="button" class="submit_btn" id="btnVoters">create</button>
+                </div>
+                <div id="showVoters"></div>
+              
+                
+                <div class="input_field">
+                    <label>voter verifcation Id Type</label>
+                    <input type="text" class="input <%= validationErrors.find(e=> e.param ==='typeOfId') ? 'invalid' : ''%> " name="typeOfId">
+                </div>
+                <div class="input_field">
+                <label>select the expiration time for voter verifcation form</label>
+               <input type="date"  class="input" name="endDate" id="dateEnd">
+               <input type="time"  class="input" name="endTime" id="timeEnd">
+                </div>
+
+                <div class="input_field">
+                  
+                    <label>Description</label>
+                    <textarea class="input <%= validationErrors.find(e=> e.param ==='desc') ? 'invalid' : ''%> " name="desc" id=""  rows="5"></textarea>
+                </div>
+                <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                <div class="btn">
+                    <input type="submit" value="Submit" class="submit_btn">
+                </div>
+            </form>
+        <!-- </div> -->
+    </div>	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/script.js"></script>
+
+<%- include('../partials/footer') %> 

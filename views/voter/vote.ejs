@@ -1,0 +1,44 @@
+<%- include('../partials/header') %> 
+
+<link rel="stylesheet" href="/css/electnav.css">
+<%- include('../partials/title') %> 
+<%- include('../partials/vnav') %> 
+
+<h1>Give your vote</h1>
+   <!-- // <div > -->
+       <div class="wrapper1">
+        <% if(errorMsg) {%> 
+          <div class="user-message user-message-error"><%= errorMsg %></div>
+      <% } %> 
+        <form action="/v/vote" method="post" class="card">
+                <p>Enter your public key</p>
+              <br>
+              <div class="input_field">
+                <label>Public Key</label>
+                <input type="text" class="input" name ="vPub" autocomplete="off">
+            </div>
+            <div class="input_field">
+              <label>Private Key</label>
+              <input type="text" class="input" name ="vPrv" autocomplete="off">
+          </div>
+          <p>Choose your candidate</p>
+                   <% election.candidatesDetails.forEach(c=>{%> 
+                    <div class="input_field">
+                        <label><%=c.candName %> </label>
+                        <input type="radio"  name ="cId" value ="<%=c.candidateWallet.pub%>" required>
+                        <input type="hidden"  name ="cPub" value ="<%=c.candidateWallet.pub%>">
+                        <span hidden style="text-overflow: ellips;"><%=c.candidateWallet.pub%></span>
+                    </div>
+                   <%   }) %> 
+
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <div class="btn">
+                
+                <button type="submit" class="submit_btn" id="btnCandidate">create</button>
+            </div>
+        </form>
+
+       
+
+<script src="/js/simple.js"></script>
+<%- include('../partials/footer') %> 

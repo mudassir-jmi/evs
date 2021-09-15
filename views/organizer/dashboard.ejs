@@ -1,0 +1,47 @@
+<%- include('../partials/header') %> 
+
+<link rel="stylesheet" href="/css/carddash.css">
+
+<%- include('../partials/title') %> 
+<%- include('../partials/navigation') %> 
+
+<main>
+   <h1 class="centered">welcome</h1>
+
+   <% if(admin.elections.length > 0) { %> 
+
+  <div class="container">
+        <%   admin.elections.forEach(el=>{ %> 
+               <article class="card product-item">
+               
+                     <h1 class="product__title">
+                     <a class="card__header product__title para " href="/o/<%=el.electionTitle%>/<%=el.electionId%>"><%=el.electionTitle%>
+                       
+                      </h1>
+                     </a>
+              
+                  <div class="card__image centered">
+                  </div>
+                  <div class="card__actions">  
+                 <div class="wrap-del">
+                    <div class="tlink"><a href="/p/transaction/<%=el.electionId%>/"  class="elect__nav__link <%= path === '/transaction' ? 'eactive' : '' %>" ><i class="fas fa-project-diagram"></i></a> </div>
+                    <div class="btndel">
+                     <form action="/o/delete-election" method="post">
+                        <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                        <button class="btn" name="electionId" value="<%=el.electionId%>" style="border-width: 0;"><i class="far fa-trash-alt" ></i></button>
+                          </form>   
+                    </div>      
+                  
+                 </div>          
+     </div>
+              </article>
+        <%  })%> 
+        
+        </div>
+        <% } else { %>
+         <h1 class="centered">No Elections Found!</h1>
+     <% } %>
+</main>
+
+
+<%- include('../partials/footer') %> 

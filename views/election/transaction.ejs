@@ -1,0 +1,47 @@
+
+<%- include('../partials/header') %> 
+
+<link rel="stylesheet" href="/css/hashadrs.css">
+
+<%- include('../partials/title') %> 
+<% if(user==='admin') {%>
+  <%- include('../partials/navigation') %> 
+  <% } else {%> 
+    <%- include('../partials/vnav') %> 
+    <% } %> 
+<div class="table-container  up-100">
+   
+  <center><h2 class="center"><%= election.electionTitle %> </h2></center>
+    <h1>Latest Block</h1>
+   
+    <p>The most recently mined blocks</p>
+    
+   
+    <table>
+      <thead>
+        <tr>
+            <th>Index</th>
+         <th>Address</th>
+          <th>Previous Hash</th>
+          <th>Timestamp</th>
+          
+        </tr>
+      </thead>
+
+      <tbody>
+        <% chain.forEach(block=>{ dateObj = new Date(block.timestamp);  %> 
+        <tr>
+
+            <td data-heading="Address" class="ellips"><%=block.index%></td>
+          <td data-heading="Address" class="ellips"><a href="http://localhost:3000/p/<%=eId%>/i/<%=block.index%> "><%=block.hash%></a></td>
+          <td data-heading="Transaction"><%=block.prevHash%></td>
+          <td data-heading="Total Received"><% dateObj = new Date(block.timestamp);var dd_mm_yyyy = dateObj.toLocaleDateString(); %><%= dd_mm_yyyy.replace(/(\d+)\/(\d+)\/(\d+)/g, "$3-$2-$1"); %>  <%= dateObj.toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}).slice(10,22);%> </td>
+ 
+        </tr>
+        <% }) %> 
+      </tbody>
+    </table>
+  </div>
+
+        </div>
+        <%- include('../partials/footer') %> 

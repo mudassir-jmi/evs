@@ -1,0 +1,17 @@
+<%- include('../partials/header') %> 
+    <title>Search the blocks</title>
+
+<%- include('../partials/navigation') %> 
+
+      <center> <div class="wrapper1"  style="margin: 100px;">
+        <h1>Choose the election </h1>
+
+        <div class="card" style="margin: 10px;">
+            <% election.forEach(e => {%> 
+                <h3><a href="/p/<%=e.electionId%>/i/<%=b%>  "><%= e.electionTitle %></a> </h3>
+             <%    }) %> 
+        </div>
+       </div></center>
+
+       <script src="/js/simple.js"></script>
+       <%- include('../partials/footer') %> 

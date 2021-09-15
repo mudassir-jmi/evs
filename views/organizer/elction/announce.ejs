@@ -1,0 +1,37 @@
+<%- include('../../partials/header') %> 
+
+<link rel="stylesheet" href="/css/electnav.css">
+<%- include('../../partials/title') %> 
+<%- include('../../partials/navigation') %> 
+<%- include('../../partials/electnav') %> 
+
+   <!-- // <div > -->
+       <div class="wrapper1">
+        <!-- <div class="logo">
+            <img src="https://image.shutterstock.com/shutterstock/photos/1342666157/display_1500/stock-vector-hand-voting-ballot-box-icon-election-vote-concept-simple-flat-design-for-web-site-logo-app-ui-1342666157.jpg" alt="">
+        </div> -->
+        
+       <!-- // <div > -->
+        <% if((wallet.hasCoinbase) && (!wallet.hasAnnounced)) {%> 
+        <form action="/o/announce" method="post" class="card">
+                <p>Announse the election </p>
+                <p>Before going further plaese ensures that the every voters has already created their wallet.</p>
+               <p>And tell the voters to give the vote <i class="fa fa-vote-yea"></i> .</p>
+               <!-- <input type="text" name="pubKeyAdmin" > -->
+            <input type="hidden" name="electionId" value="<%=election._id%>">
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <div class="btn">
+                <button type="submit" class="submit_btn" id="btnCandidate">create</button>
+            </div>
+        </form>
+         <% } else { %>  
+
+         <div class="card">
+            <h2>Hurray!</h2>
+            <p>Either you have'nt created wallet or you have announced the election</p>
+            </div>
+            <% } %> 
+       </div> 
+
+<script src="/js/simple.js"></script>
+<%- include('../../partials/footer') %> 
