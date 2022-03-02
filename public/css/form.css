@@ -132,7 +132,7 @@
 	margin-left: 20rem;
 	background-color: #28a745;
 	border: 1.6px solid  #28a745; 
-  border-radius: 3px;
+    border-radius: 3px;
 	width: 25%;
 	color: #fff;
 	font-weight: 600;
@@ -141,9 +141,27 @@
 	border-radius: 2px;
 }
 
+ /* for responisive the form  */
+ 
+@media only screen and (max-width: 600px) {
+		
+	  .submit_btn {
+		  margin-left: 10rem;
+	  }
+	  }
+
+@media only screen and (max-width: 300px) {
+		
+	  .submit_btn {
+		  margin-left: 5rem;
+		  padding: 6px 6px;
+	  }
+	  }
+
+
 .submit_btn:hover,
 .submit_btn:active  {
-	background-color: #f9f9f9;
+  background-color: #f9f9f9;
   color: #279f43;;
 }
 

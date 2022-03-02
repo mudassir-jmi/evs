@@ -29,6 +29,7 @@
     "hex-to-binary": "^1.0.1",
     "mongoose": "^5.12.2",
     "nodemailer": "^6.5.0",
+    "nodemon": "^2.0.15",
     "pdfkit": "^0.12.1"
   }
 }

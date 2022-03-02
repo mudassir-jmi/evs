@@ -15,7 +15,7 @@ const Voter = require('./models/voter');
 const cool = require('cool-ascii-faces');
 //mongodb url
 const MONGODB_URI = "mongodb+srv://mahibvs:jamiabvs@cluster0.u9lyf.mongodb.net/mvs";
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -110,7 +110,7 @@ mongoose
   )
   .then(result => {
   
-    app.listen(PORT, console.log("at 5000"));
+    app.listen(PORT, console.log("at 3000"));
   })
   .catch(err => {
     console.log(err);
